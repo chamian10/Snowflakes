@@ -46,36 +46,6 @@
 
         function canvasApp() {
 
-
-            // sets up facebook
-            window.fbAsyncInit = function () {
-                // init the FB JS SDK
-                FB.init({
-                    // you must change the appId to the one you are given
-                    // in your facebook account or it won't work!
-                    appId: '216856135161627',                  // App ID from the app dashboard
-                    //	channelUrl : '//yourdomain.com/channel.php', // Channel file for x-domain comms
-                    status: true,                               // Check Facebook Login status
-                    xfbml: true,                                // Look for social plugins on the page
-                    version: 'v2.2'
-                });
-                // Additional initialization code such as adding Event Listeners goes here
-
-            };
-
-            // Load the SDK asynchronously
-            (function (d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) {
-                    return;
-                }
-                js = d.createElement(s);
-                js.id = id;
-                js.src = "http://connect.facebook.net/en_US/all.js";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-
-
             var displayCanvas = document.getElementById("displayCanvas");
             var displayContext = displayCanvas.getContext("2d");
             var displayBackgroundCanvas = document.getElementById("displayBackgroundCanvas");
@@ -165,13 +135,6 @@
 
             var saveConfirmSeenOnce;
 
-            // Browser-sniffing for CSS gradient vendor prefix
-            // from http://stackoverflow.com/questions/15071062/using-javascript-to-edit-css-gradient
-            //
-            // Detect which browser prefix to use for the specified CSS value
-            // (e.g., background-image: -moz-linear-gradient(...);
-            //        background-image:   -o-linear-gradient(...); etc).
-            //
             function getCssValuePrefix(name, value) {
                 var prefixes = ['', '-o-', '-ms-', '-moz-', '-webkit-'];
 
@@ -231,6 +194,72 @@
                     {
                         name: "gray",
                         end: "#e0e0e0",
+                        start: "#707070",
+                        textBG: "#CCCCCC"
+                    },
+                    {
+                        name: "blue3",
+                        start: "#586B87",
+                        end: "#a47F07"
+                    },
+                    {
+                        name: "green3",
+                        end: "#707070",
+                        start: "#267028"
+                    },
+                    {
+                        name: "red3",
+                        end: "#707070",
+                        start: "#b00000",
+                        textBG: "#ef1f1f"
+                    },
+                    {
+                        name: "purple3",
+                        end: "#222222",
+                        start: "#57305c"
+                    },
+                    {
+                        name: "gold3",
+                        end: "#111111",
+                        start: "#a47F07",
+                        textBG: "#d4aF37"
+                    },
+                    {
+                        name: "gray3",
+                        end: "#ffffff",
+                        start: "#707070",
+                        textBG: "#CCCCCC"
+                    },
+                    {
+                        name: "blueB",
+                        start: "#586B87",
+                        end: "#267028"
+                    },
+                    {
+                        name: "greenB",
+                        end: "#b00000",
+                        start: "#267028"
+                    },
+                    {
+                        name: "redB",
+                        end: "#57305c",
+                        start: "#b00000",
+                        textBG: "#ef1f1f"
+                    },
+                    {
+                        name: "purpleB",
+                        end: "#a47F07",
+                        start: "#57305c"
+                    },
+                    {
+                        name: "goldB",
+                        end: "#707070",
+                        start: "#a47F07",
+                        textBG: "#d4aF37"
+                    },
+                    {
+                        name: "grayB",
+                        end: "#586B87",
                         start: "#707070",
                         textBG: "#CCCCCC"
                     }
@@ -346,7 +375,7 @@
                 } else {
                     urlText.style.background = bgColors[index].textBG;
                 }
-                urlText2.style.background = bgColors[index].start;
+               // urlText.style.background = bgColors[index].start;
             }
 
             function drawBoardBackground(index) {
@@ -600,7 +629,7 @@
             }
 
             function btnResetHandler(evt) {
-                if (confirm('Estás a punto de comprar una hoja, recordá descontar $100 de tu balance')) {
+                if (confirm('Estás a punto de comprar una hoja, recordá anotarlo en el balance')) {
                     if (drawing) {
                         cancelDrawing();
                     }
@@ -921,10 +950,10 @@
 
             function btnShareHandler() {
                 drawExportCanvas();
-                postCanvasToFacebook(exportCanvas, shareTextArea.value)
+             //   postCanvasToFacebook(exportCanvas, shareTextArea.value)
             }
 
-            function postImageToFacebook(authToken, filename, mimeType, imageData, message) {
+          /*  function postImageToFacebook(authToken, filename, mimeType, imageData, message) {
                 // this is the multipart/form-data boundary we'll use
                 var boundary = '----ThisIsTheBoundary1234567890';
 
@@ -948,7 +977,7 @@
                 };
                 xhr.setRequestHeader("Content-Type", "multipart/form-data; boundary=" + boundary);
                 xhr.sendAsBinary(formData);
-            }
+            }*/
 
             function drawExportCanvas() {
                 //draw elements
@@ -1561,14 +1590,8 @@
     <div id="buttonPanel">
         <div id="titleText">Objetivo:</div>
         <div id="urlText"><a> Tener un negocio rentable.</a></div>
-        <div id="urlText2">Reglas:</div>
-        <div id="urlText3"><a>
-            3 Hojas de papel: $50 <br>
-            3 tijera: $100 <br>
-            1' P - 3' D - 2' R <br>
-            Abierto solo en D <br>
-
-        </a></div>
+        
+        
         <div id="buttonPanelContent">
             <div id="colorButtonsLabel">Elegí un fondo:</div>
             <hr>
