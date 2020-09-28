@@ -362,7 +362,7 @@
                 } else {
                     urlText.style.background = bgColors[index].textBG;
                 }
-               // urlText.style.background = bgColors[index].start;
+                // urlText.style.background = bgColors[index].start;
             }
 
             function drawBoardBackground(index) {
@@ -937,34 +937,34 @@
 
             function btnShareHandler() {
                 drawExportCanvas();
-             //   postCanvasToFacebook(exportCanvas, shareTextArea.value)
+                //   postCanvasToFacebook(exportCanvas, shareTextArea.value)
             }
 
-          /*  function postImageToFacebook(authToken, filename, mimeType, imageData, message) {
-                // this is the multipart/form-data boundary we'll use
-                var boundary = '----ThisIsTheBoundary1234567890';
+            /*  function postImageToFacebook(authToken, filename, mimeType, imageData, message) {
+                  // this is the multipart/form-data boundary we'll use
+                  var boundary = '----ThisIsTheBoundary1234567890';
 
-                // let's encode our image file, which is contained in the var
-                var formData = '--' + boundary + '\r\n'
-                formData += 'Content-Disposition: form-data; name="source"; filename="' + filename + '"\r\n';
-                formData += 'Content-Type: ' + mimeType + '\r\n\r\n';
-                for (var i = 0; i < imageData.length; ++i) {
-                    formData += String.fromCharCode(imageData[i] & 0xff);
-                }
-                formData += '\r\n';
-                formData += '--' + boundary + '\r\n';
-                formData += 'Content-Disposition: form-data; name="message"\r\n\r\n';
-                formData += message + '\r\n'
-                formData += '--' + boundary + '--\r\n';
+                  // let's encode our image file, which is contained in the var
+                  var formData = '--' + boundary + '\r\n'
+                  formData += 'Content-Disposition: form-data; name="source"; filename="' + filename + '"\r\n';
+                  formData += 'Content-Type: ' + mimeType + '\r\n\r\n';
+                  for (var i = 0; i < imageData.length; ++i) {
+                      formData += String.fromCharCode(imageData[i] & 0xff);
+                  }
+                  formData += '\r\n';
+                  formData += '--' + boundary + '\r\n';
+                  formData += 'Content-Disposition: form-data; name="message"\r\n\r\n';
+                  formData += message + '\r\n'
+                  formData += '--' + boundary + '--\r\n';
 
-                var xhr = new XMLHttpRequest();
-                xhr.open('POST', 'https://graph.facebook.com/me/photos?access_token=' + authToken, true);
-                xhr.onload = xhr.onerror = function () {
-                    console.log(xhr.responseText);
-                };
-                xhr.setRequestHeader("Content-Type", "multipart/form-data; boundary=" + boundary);
-                xhr.sendAsBinary(formData);
-            }*/
+                  var xhr = new XMLHttpRequest();
+                  xhr.open('POST', 'https://graph.facebook.com/me/photos?access_token=' + authToken, true);
+                  xhr.onload = xhr.onerror = function () {
+                      console.log(xhr.responseText);
+                  };
+                  xhr.setRequestHeader("Content-Type", "multipart/form-data; boundary=" + boundary);
+                  xhr.sendAsBinary(formData);
+              }*/
 
             function drawExportCanvas() {
                 //draw elements
@@ -1417,21 +1417,21 @@
 
         #saveButtonsHolder {
             width: 440px;
-        /* height: 100 px;
-        / / height: 440 px;
-        / / float: left;*/
+            /* height: 100 px;
+            / / height: 440 px;
+            / / float: left;*/
             margin-bottom: 14px;
             vertical-align: top;
-        /* background: #F00;*/
+            /* background: #F00;*/
             display: inline-block;
         }
 
         #instructionsText {
             position: relative;
             width: 250px;
-        /* text-align: center;
-        / / top: 500 px;
-        / / z-index: 1;*/
+            /* text-align: center;
+            / / top: 500 px;
+            / / z-index: 1;*/
             font-family: sans-serif;
             color: #333333;
             font-size: 10px;
@@ -1439,7 +1439,7 @@
             margin: 0px 0px 0px 10px;
             vertical-align: top;
             text-align: justify;
-        /* background: #5f5;*/
+            /* background: #5f5;*/
         }
 
         #titleText {
@@ -1573,12 +1573,12 @@
     <div id="displayCanvasHolder">
         <canvas id="displayCanvas" width="440px" height="440px">Your browser does not support HTML5 canvas.</canvas>
         <canvas id="displayBackgroundCanvas" width="440px" height="440px"></canvas>
-    </div> 
+    </div>
     <div id="buttonPanel">
         <div id="titleText">Objetivo:</div>
         <div id="urlText"><a> Tener un negocio rentable.</a></div>
-        
-        
+
+
         <div id="buttonPanelContent">
             <div id="colorButtonsLabel">Elegí un fondo:</div>
             <hr>
@@ -1591,7 +1591,7 @@
                 </li>
                 <li style="display: none"><input type="button" class="button1" id="btnReset" value="reset"
                                                  title="start over"/></li>
-                
+
                 <li style="display: none"><label title="Creates a folded paper appearance."><input type="checkbox"
                                                                                                    class="checkbox1"
                                                                                                    id="cbShading"
@@ -1611,7 +1611,7 @@
         Para cortar el papel se deben dibujar formas cerradas. Estas formas cerradas representan un corte con
         tijera.
     </div>-->
-    <div id="infoPanel">   
+    <div id="infoPanel">
         <div id="saveButtonsHolder">
             <div id="sharePanel">
                 <!--                <textarea id="shareTextArea" name="shareText" rows="2"></textarea>-->
@@ -1628,7 +1628,7 @@
             </div>
             <div id="clear" style="clear:both"></div>
         </div>
-        
+
         <!--        <div id="shareIcons">-->
         <!--            Share this page:-->
         <!--            <a rel="nofollow"-->
@@ -1656,7 +1656,7 @@
     <hr>
 
     <iframe width="100%" height="800"
-            src="https://docs.google.com/spreadsheets/d/1MA9ZfnQ_yaG48A5pbLIDXg8qDzehaXAlKGs4BulrkmM/edit?usp=sharing?single=false&widget=false&headers=false"
+            src="https://docs.google.com/spreadsheets/d/1prUo1MslxwhmcyoI8IpbMS9AQRxKaDFcxJj8mG9PrIE?single=false&widget=false&headers=false"
             scrolling="no"></iframe>
 
 </div>
